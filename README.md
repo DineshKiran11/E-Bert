@@ -1,5 +1,5 @@
 # E-Bert
-# E-BERT: Confidence-Aware Fake News Detection Using Deep Learning
+# Detection and Classification of Fake news using Deep learning technique E-Bert
 
 ## 📌 Project Overview
 
