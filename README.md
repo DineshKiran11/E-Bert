@@ -1,11 +1,13 @@
 # E-Bert
-# E-BERT: Fake News Detection Using Deep Learning
+# E-BERT: Confidence-Aware Fake News Detection Using Deep Learning
 
 ## 📌 Project Overview
 
 E-BERT is a Fake News Detection system developed using advanced Deep Learning techniques. The project utilizes BERT embeddings combined with LSTM and GRU models to classify news articles as **Real** or **Fake**.
 
-The goal of this project is to combat misinformation by automatically detecting fake news from textual content with high accuracy.
+To improve prediction reliability, the proposed framework incorporates **Monte Carlo Dropout** for uncertainty estimation. This enables the model not only to classify news articles but also to estimate the confidence of its predictions.
+
+The goal of this project is to combat misinformation by automatically detecting fake news from textual content with high accuracy and reliability.
 
 ---
 
@@ -15,6 +17,8 @@ The goal of this project is to combat misinformation by automatically detecting 
 * BERT-based Text Embedding
 * LSTM Model Implementation
 * GRU Model Implementation
+* Monte Carlo Dropout for Uncertainty Estimation
+* Confidence-Aware Predictions
 * Data Preprocessing and Cleaning
 * Performance Evaluation
 * Binary Classification (Real/Fake)
@@ -28,9 +32,11 @@ The goal of this project is to combat misinformation by automatically detecting 
 * TensorFlow / Keras
 * LSTM
 * GRU
+* Monte Carlo Dropout
 * Pandas
 * NumPy
 * Scikit-learn
+* Matplotlib
 
 ---
 
@@ -41,7 +47,6 @@ E-Bert/
 │
 ├── BERT_GRU_code.py
 ├── BERT_LSTM_code.py
-├── modifieddataset.csv
 ├── Final_Document.pdf
 ├── Fake news detecction base paper.pdf
 └── README.md
@@ -63,11 +68,23 @@ The dataset contains news articles labeled as:
 | text   | News article content     |
 | label  | Real/Fake classification |
 
-Dataset File:
+### Processed Dataset
+
+The processed dataset used for model training and testing can be downloaded from:
+
+https://drive.google.com/file/d/1Xz62VO4HotE-jlHUyyRs10PJ5-2PYfFE/view?usp=sharing
+
+**File Name:**
 
 ```text
 modifieddataset.csv
 ```
+
+### Real-World Dataset
+
+The original real-world dataset used for data collection and preprocessing is available at:
+
+https://drive.google.com/drive/folders/1dGdoswSZPqlU_tzQUGgk1GwC_Ocfl4qA?usp=drive_link
 
 ---
 
@@ -88,7 +105,7 @@ cd E-Bert
 ### Install Dependencies
 
 ```bash
-pip install pandas numpy scikit-learn tensorflow transformers
+pip install pandas numpy scikit-learn tensorflow transformers matplotlib
 ```
 
 ---
@@ -117,8 +134,9 @@ python BERT_LSTM_code.py
 4. BERT Tokenization
 5. Feature Extraction
 6. Model Training
-7. Model Evaluation
-8. Fake News Prediction
+7. Monte Carlo Dropout-Based Uncertainty Estimation
+8. Model Evaluation
+9. Fake News Prediction
 
 ---
 
@@ -129,14 +147,17 @@ The developed models effectively classify news articles by leveraging:
 * BERT for contextual text understanding
 * LSTM for sequential pattern learning
 * GRU for efficient sequence modeling
+* Monte Carlo Dropout for confidence estimation
 
-The system demonstrates strong performance in identifying fake news content from real news articles.
+The system demonstrates strong performance in identifying fake news content from real news articles while providing prediction confidence for improved reliability.
 
 ---
 
 ## 🎯 Future Enhancements
 
 * Real-Time Fake News Detection
+* Dynamic Uncertainty Thresholds
+* Human-in-the-Loop Verification
 * Web Application Deployment
 * Mobile Application Integration
 * Multilingual Fake News Detection
